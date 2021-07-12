@@ -159,12 +159,12 @@ func (p *Provider) createProviders(ctx context.Context) (providers []koanf.Provi
 			return nil, err
 		}
 
-		c := make(watcherx.EventChannel)
-		if _, err := fp.WatchChannel(c); err != nil {
-			return nil, err
-		}
+		// c := make(watcherx.EventChannel)
+		// if _, err := fp.WatchChannel(c); err != nil {
+		// 	return nil, err
+		// }
 
-		go p.watchForFileChanges(c)
+		// go p.watchForFileChanges(c)
 
 		providers = append(providers, fp)
 	}
